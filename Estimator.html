@@ -1,0 +1,82 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <title>Select Cab Type</title>
+            <style>
+                body{
+                    background-image: linear-gradient(to bottom right,#ccbb33,#33bbcc);
+                }
+                h2{
+                    font-family:'Times New Roman', Times, serif!important;
+                    margin:0 auto;
+                    padding-top: 5px;
+                }
+                #kms{
+                    margin-top: 50%;
+                }
+                #cabtype{                   
+                    border-top: 10px;
+
+                }
+                #division{
+                    margin-left: 35%;
+                    margin-right: 35%;
+                }
+                #continuebtn{
+                    visibility: hidden;
+                }
+            </style>
+            <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+        </head>
+        <body>
+        <h2 style="text-align: center">Select Preferred Cab Service</h2>
+        <div id="division">
+            <br>
+            <div >
+                <label for="cabtype">Cab Type:</label>
+                    <select id="services">
+                        <option disabled>---Select Cab Service---</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro">Mini</option>
+                        <option value="Prime">Prime</option>
+                    </select>
+            </div>
+            <div>
+                    <label for="kms">No. of Kms</label>
+                    <input type="number" placeholder="Enter Kms" name=km id="km">
+            </div>
+            <div>
+                <button id="calculatebtn" class="btn btn-danger">Calculate</button>
+                <button id="continuebtn" class="btn btn-outline-danger">Continue</button>
+            </div>
+                
+            <p>Price:<span id="price"></span></p>
+        </div>
+        </body>
+        
+        <script type="text/javascript">
+        var cabType = document.getElementById("services");
+        var noOfKms = document.getElementById("km");
+        var calculateBtn = document.getElementById("calculatebtn");
+        var price = document.getElementById("price");
+        var contBtn = document.getElementById("continuebtn");
+        function kit(){
+            var cab = cabType.value;
+            var kms = noOfKms.value;
+            if(cab === "Micro"){
+                price.innerText = 10*kms;
+            }else if(cab === "Mini"){
+                price.innerText = 15*kms;
+            }else{
+                price.innerText = 20*kms;
+            }
+            contBtn.style.visibility = "visible";
+        }
+        calculateBtn.addEventListener('click',kit)
+
+        </script>
+    </html>
+</DOCTYPE>
