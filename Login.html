@@ -1,29 +1,40 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
 </head>
 <body>
-	<h2>Login</h2>
-	<form method="post" action="CabDetails.html">
-		<div>
-			<label for="mobile no" id="mobile no">Mobile No.</label> <input
-				type="number" name="mobile no." placeholder="Enter mobile number"
-				required></input>
-		</div>
-		<br> <br>
-		<div>
-			<label for="password" id="password">Password</label> <input
-				type="password" name="password" placeholder="Enter password"
-				required></input>
-		</div>
-		<br> <input type="checkbox" name="check"></input> <label>Remember
-			me</label>
-		<div>
-			<a href="https://cabapp-mohamedhalith.netlify.app/cabdetails"><button>Submit</button></a>
-		</div>
+	<div class=" border-right" id="division" width="100px" height="700px">
+		
+		<form method="post" id="login" action="CabDetails.html">
+		<h2>Login</h2>
+			<div>
+				<label for="mobile no" id="mobile no">Mobile No.</label> 
+				<input
+					type="number" name="mobile no." placeholder="Enter mobile number"
+					required>
+				</input>
+			</div>
+			<br> <br>
+			<div>
+				<label for="password" id="password">Password</label> 
+				<input
+					type="password" name="password" placeholder="Enter password"
+					required>
+				</input>
+			</div>
+			<br> <input type="checkbox" name="check"></input> <label>Remember me</label>
+			<div>
+				<button name="Submit" id="submit">Submit</button>
+			</div>
+		</form>
+	</div>
 
-	</form>
 </body>
 </html>
