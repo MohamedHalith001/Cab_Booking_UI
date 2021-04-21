@@ -1,0 +1,57 @@
+<DOCTYPE! html>
+    <html>
+
+    <head>
+        <title>Booking Receipt</title>
+        <style>
+        body{
+            background-color: blanchedalmond
+        }
+        #receipt{
+            margin:auto;
+            padding: 10px 0;
+            width:50%;
+            background-color: rgba(255,255,255,0.75);
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div id="receipt">
+            <h2>Receipt</h2>
+            <p>Pickup Location: <b><span id="pickup"></span></b></p>
+            <p>Destination: <b><span id="destination"></b></span></p>
+            <p>Booked Date: <b><span id="date"></span></b></p>
+            <p>Booked Time: <b><span id="time"></span></b></p>
+            <p>Senior Citizen: <b><span id="senior"></span></b></p>
+            <p>Cab Type: <b><span id="type"></span></b></p>
+            <p>Cab Number: <b>TN09BF2234</b></p>
+            <p>Ride Cost: <b>Rs.<span id="cost"></span></b></p>
+            <p>Have a Safe Journey :)</p>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        blink();
+        function blink() {
+            let pick = localStorage.getItem("pickup");
+            let dest = localStorage.getItem("destination");
+            let date = localStorage.getItem("date");
+            let time = localStorage.getItem("time");
+            let senior = localStorage.getItem("senior");
+            let cost = localStorage.getItem("total");
+            let type = localStorage.getItem("type");
+            document.getElementById("pickup").innerHTML = pick;
+            document.getElementById("destination").innerHTML = dest;
+            document.getElementById("date").innerHTML = date;
+            document.getElementById("time").innerHTML = time;
+            document.getElementById("senior").innerHTML = senior;
+            document.getElementById("cost").innerHTML = cost;
+            document.getElementById("type").innerHTML = type;
+        }
+    </script>
+
+    </html>

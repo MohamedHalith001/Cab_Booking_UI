@@ -1,103 +1,89 @@
 <DOCTYPE html>
     <html>
-        <head>
-            <title>Booking</title>
-            <style>
-                body{
-                    background-image: linear-gradient(to bottom right,#ccbb33,#33bbcc);
-                }
-                h2{
-                    font-family:'Times New Roman', Times, serif!important;
-                    margin:0 auto;
-                    padding-top: 5px;
-                }
-                #kms{
-                    margin-top: 50%;
-                }
-                #cabtype{                   
-                    border-top: 10px;
 
-                }
-                #division{
-                    margin-left: 35%;
-                    margin-right: 35%;
-                    width:400px;
-                }
-                #continuebtn{
-                    visibility: hidden;
-                    margin-left: 30%;
-                    margin-right: 30%
-                }
-            </style>
-            <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-        </head>
-        <body>
+    <head>
+        <title>Booking</title>
+        <style>
+            body {
+                background-image: linear-gradient(to bottom right, #ccbb33, #33bbcc);
+            }
+
+            h2 {
+                font-family: 'Times New Roman', Times, serif!important;
+                margin: 0 auto;
+                padding-top: 5px;
+            }
+
+            #division {
+                padding: 10px;
+                margin: auto;
+                width: 50%;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+            }
+
+            #continuebtn {
+                visibility: hidden;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+    </head>
+
+    <body>
         <h2 style="text-align: center">Ticket Booking</h2>
         <div id="division">
-            <br>
-            <div >
-                <label for="cabtype">Cab Type:</label>
-                    <select id="services">
-                        <option disabled>---Select Cab Service---</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro">Mini</option>
-                        <option value="Prime">Prime</option>
-                    </select>
-            </div>
-            <div>
-                    <label for="kms">No. of Kms</label>
-                    <input type="number" placeholder="Enter Kms" name=km id="km">
-            </div>
-            <div>
-                <button id="calculatebtn"  class="btn btn-danger">Calculate</button>
-                
-            </div>
-            <p>Price:<span id="price"></span></p>
-            <div>
-                <div id="pickup">
-                    <label for="Pickup">Pickup Location</label>
-                    <input type="text" name="Pickup" placeholder="Eg.Chennai">
-                </div>
+            <form onsubmit="journeyDetails()" method="post">
+                <label for="services">Cab Type:</label>
+                <select id="services">
+                    <option disabled>---Select Cab Service---</option>
+                    <option value="Micro">Micro</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Prime">Prime</option>
+                </select>
                 <br>
-                <div id="destination">
-                    <label for="Destination">Destination</label>
-                    <input type="text" name="Destination" placeholder="Eg.Trichy">
-                    </div>
-                    <br>
-                    <div id="j-date">
-                    <label for="journey-date">Journey Date</label>
-                    <input type="date" placeholder="DD-MM-YYYY" name="journey-date">
-                    </div>
-                </div>
                 <br>
-                <div id="j-time">
-                    <label for="journey-time">Journey Time</label>
-                    <input type="time" placeholder="HH:MM" name="journey-time">
-                </div>
+                <label for="km">No. of Kms</label>
+                <input type="number" placeholder="Enter Kms" name=km id="km">
                 <br>
-                <div>
-                    <u><h6>Gender</h6></u>
-                    <label for="male" >Male</label>
-                    <input type="radio" id="male"name="gender" value="Male">
-                    <label for="female">Female</label>
-                    <input type="radio" name="gender" value="Female">
-                        <label for="others">Others</label>
-                        <input type="radio" id="others" name="gender" value="Others">
-                    </div>
-                    <br>
-                    <div>
-                        <label>Are you a senior citizen?</label>
-                        <select id="srcitizen">
-                            <option disabled>Choose an option</option>
-                            <option >Yes</option>
-                            <option>No</option>
-                        </select>
-                    </div>
-                    <br>
-                    <u><h5>Instructions:</h5></u>
+                <br>
+                <label for="startLocation">Pickup Location</label>
+                <input type="text" name="Pickup" id="startLocation" placeholder="Eg.Chennai">
+                <br>
+                <br>
+                <label for="destination">Destination</label>
+                <input type="text" name="Destination" id="destination" placeholder="Eg.Trichy">
+                <br>
+                <br>
+                <label for="journey-date">Journey Date</label>
+                <input type="date" placeholder="DD-MM-YYYY" id="date" name="journey-date">
+                <br>
+                <br>
+                <label for="journey-time">Journey Time</label>
+                <input type="time" placeholder="HH:MM" id="time" name="journey-time">
+                <br>
+                <br>
+                <u>
+                    <h6>Gender</h6>
+                </u>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="Others">
+                <label for="others">Others</label>
+                <br>
+                <br>
+                <label>Are you a senior citizen?</label>
+                <select id="srcitizen">
+                    <option disabled>Choose an option</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <br>
+                <u>
+                    <h5>Instructions:</h5>
+                </u>
                 <ul>
                     <li>Make sure to wear mask</li>
                     <li>Do not eat food inside the cab</li>
@@ -105,35 +91,95 @@
                     <li>Depending upon the timing of the journey, the user may be subjected to additional charges</li>
                     <li>No refund shall be entertained after booking of ticket</li>
                 </ul>
-                <div>
-                <br><br>
+                <br>
+                <p style="text-align:center">Price:
+                    <span id="price"></span>
+                </p>
+                <p style="text-align:center">Tax:
+                    <span id="gst"></span>
+                </p>
+                <p style="text-align:center">Total:
+                    <span id="total"></span>
+                </p>
+                <br>
+                <button id="calculatebtn" class="btn btn-danger">Calculate</button>
                 <button id="continuebtn" class="btn btn-danger">Continue</button>
-                </div>
-                </div>
-                
-            </div>
-        </body>
-        
+        </div>
+        </form>
         <script type="text/javascript">
-        var cabType = document.getElementById("services");
-        var noOfKms = document.getElementById("km");
-        var calculateBtn = document.getElementById("calculatebtn");
-        var price = document.getElementById("price");
-        var contBtn = document.getElementById("continuebtn");
-        function kit(){
-            var cab = cabType.value;
-            var kms = noOfKms.value;
-            if(cab === "Micro"){
-                price.innerText = 10*kms;
-            }else if(cab === "Mini"){
-                price.innerText = 15*kms;
-            }else{
-                price.innerText = 20*kms;
+            let pickup, destination, km, cab, senior, tax, cost, contbtn;
+            let today, price, gst, total, date, time, datestamp, now;
+            setminDate();
+            function setminDate() {
+                datestamp = new Date();
+                console.log(datestamp);
+                let yy = datestamp.getFullYear();
+                let mm = datestamp.getMonth();
+                mm++;
+                let dd = datestamp.getDate();
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+                today = yy + '-' + mm + '-' + dd;
+                document.getElementById("date").setAttribute("min", today);
             }
-            contBtn.style.visibility = "visible";
-        }
-        calculateBtn.addEventListener('click',kit)
-
+            function journeyDetails() {
+                event.preventDefault();
+                km = document.querySelector("#km").value;
+                cab = document.querySelector("#services").value;
+                senior = document.querySelector("#srcitizen").value;
+                span = document.getElementById("price");
+                tax = document.getElementById("gst");
+                cost = document.getElementById("total");
+                contbtn = document.getElementById("continuebtn");
+                date = document.getElementById("date").value;
+                time = document.getElementById("time").value;
+                pickup = document.getElementById("startLocation").value;
+                destination = document.getElementById("destination").value;
+                calculate();
+                contbtn.addEventListener('click', function () {
+                    window.location.replace('Receipt.html');
+                });
+            };
+            function calculate() {
+                switch (cab) {
+                    case "Micro":
+                        price = km * 10;
+                        break;
+                    case "Mini":
+                        price = km * 15;
+                        break;
+                    case "Prime":
+                        price = km * 20;
+                        break;
+                }
+                if (senior == "Yes") {
+                    price /= 2;
+                }
+                contbtn.style.visibility = "visible";
+                span.innerHTML = price;
+                gst = (7 * price) / 100;
+                tax.innerHTML = (gst);
+                gst = Math.ceil(gst);
+                total = price + gst;
+                cost.innerHTML = (total);
+                saveDetails();
+            }
+            function saveDetails() {
+                localStorage.setItem("km", km);
+                localStorage.setItem("type", cab);
+                localStorage.setItem("senior", senior);
+                localStorage.setItem("total", total);
+                localStorage.setItem("date", date);
+                localStorage.setItem("time", time);
+                localStorage.setItem("pickup", pickup);
+                localStorage.setItem("destination", destination);
+            }
         </script>
+    </body>
+
     </html>
 </DOCTYPE>

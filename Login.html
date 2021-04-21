@@ -4,7 +4,6 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Login</title>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
 	<style>
@@ -27,7 +26,6 @@
 			left: 37%;
 			position: absolute;
 			background-color: rgba(10, 10, 10, 0.85);
-
 			border-radius: 10%;
 			padding: 0;
 		}
@@ -74,14 +72,14 @@
 	</div>
 	<script type="text/javascript">
 		function login() {
-			// event.preventDefault();
+			event.preventDefault();
 			alert("Login button clicked");
 			let username = document.querySelector("#mobile").value;
 			let password = document.querySelector("#pass").value;
 			if (username = "9524896959" && username.length == 10) {
 				if (password == "pass1234" && password.length >= 8) {
 					alert("Login Successful");
-					window.open('https://cabapp-mohamedhalith.netlify.app/cabdetails');
+					window.location.replace('CabDetails.html');
 				}
 			} else {
 				alert("Invalid Credentials");
