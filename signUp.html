@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+        <style>
+        body{
+            text-align: center;
+            
+        }
+        #division{
+            left:37%;
+            top:20%;
+            position: absolute;
+            width:320px;
+            height: 400px;
+        }
+        #submit{
+            margin-top: 10px;
+            margin-left: 5%;
+            position: relative;
+        }
+        #form{
+            padding:10px!important;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>Sign up!</h3>
+        <div id="division" class="form">
+            <form id="form" method="post">
+                <label for="name">Name</label><br>
+                <input type="text" name="name" required><br>
+                <label for="contact">Mobile No.</label><br>
+                <input type="number" name="contact" required><br>
+                <label for="mail">E-mail</label><br>
+                <input type="email" name="mail" required><br>
+                <input type="submit" name="submit" id="submit">
+            </form>
+        </div>
+    </body>
+</html>

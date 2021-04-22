@@ -1,0 +1,118 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Booking</title>
+        <style>
+            body {
+                background-image: linear-gradient(to bottom right, #ccbb33, #33bbcc);
+            }
+
+            h2 {
+                font-family: 'Times New Roman', Times, serif!important;
+                margin: 0 auto;
+                padding-top: 5px;
+            }
+
+            #division {
+                padding: 10px;
+                margin: auto;
+                width: 50%;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+            }
+            p{
+                visibility: hidden;
+            }
+            #continuebtn {
+                visibility: hidden;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+        <h2 style="text-align: center">Ticket Booking</h2>
+        <div id="division">
+            <form onsubmit="journeyDetails()" method="post">
+                <label for="services">Cab Type:</label>
+                <select id="services">
+                    <option disabled>---Select Cab Service---</option>
+                    <option value="Micro">Micro</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Prime">Prime</option>
+                </select>
+                <br>
+                <br>
+                <label for="km">No. of Kms</label>
+                <input type="number" placeholder="Enter Kms" required name=km id="km">
+                <br>
+                <br>
+                <label for="startLocation">Pickup Location</label>
+                <input type="text" name="Pickup" id="startLocation" required placeholder="Eg.Chennai">
+                <br>
+                <br>
+                <label for="destination">Destination</label>
+                <input type="text" name="Destination" id="destination" required placeholder="Eg.Trichy">
+                <br>
+                <br>
+                <label for="journey-date">Journey Date</label>
+                <input type="date" placeholder="DD-MM-YYYY" id="travelDate" required name="journey-date">
+                <br>
+                <br>
+                <label for="journey-time">Journey Time</label>
+                <input type="time" placeholder="HH:MM" id="travelTime" required name="journey-time">
+                <br>
+                <br>
+                <u>
+                    <h6>Gender</h6>
+                </u>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="Others">
+                <label for="others">Others</label>
+                <br>
+                <br>
+                <label>Are you a senior citizen?</label>
+                <input type="checkbox" id="seniorCitizen">
+                <br>
+                <u>
+                    <h5>Instructions:</h5>
+                </u>
+                <ul>
+                    <li>Make sure to wear mask</li>
+                    <li>Do not eat food inside the cab</li>
+                    <li>Smoking/Consumption of alcohol inside the cab is strictly prohibited</li>
+                    <li>Depending upon the timing of the journey, the user may be subjected to additional charges</li>
+                    <li>No refund shall be entertained after booking of ticket</li>
+                </ul>
+                <br>
+                <b>
+                    <p style="text-align:center">PeakHour:
+                        <span id="peakHour"></span>
+                    </p>
+                    <p style="text-align:center">Price:
+                        <span id="price"></span>
+                    </p>
+                    <p style="text-align:center">Tax:
+                        <span id="gst"></span>
+                    </p>
+                    <p style="text-align:center">Total:
+                        <span id="total"></span>
+                    </p>
+                </b>
+                <br>
+                <button id="calculatebtn" class="btn btn-danger">Calculate</button>
+                <button id="continuebtn" class="btn btn-danger">Continue</button>
+        </div>
+        </form>
+        <script type="text/javascript" src="Estimator.js">
+
+        </script>
+    </body>
+
+    </html>
+</DOCTYPE>

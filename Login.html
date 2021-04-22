@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<style>
+		h2 {
+			padding: 20px;
+		}
+
+		body {
+			background: url(01.jpg);
+			background-size: cover;
+		}
+		#division {
+			color: white;
+			background-color: rgba(10, 10, 10, 0.85);
+			border-radius: 10%;
+			padding: 0;
+		}
+		.container{
+			width:300px;
+			height:500px;;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container text-center" id="division" >
+		<form method="POST" class="form-group" onsubmit="login()">
+			<h2>Login</h2>
+			<div class="form-outline mb-4">
+				<label for="mobile no" id="mobileno">Mobile No.</label>
+				<br>
+				<input autofocus type="number" class="text-center" name="mobile no." id="mobile" placeholder="Enter mobile number" required>
+				</input>
+			</div>
+			 <div class="form-outline mb-4">
+				<label for="password" id="password">Password</label>
+				<br>
+				<input type="password" class="text-center" name="password" id="pass" placeholder="Enter password" required>
+				</input>
+			</div>
+			<input type="checkbox" name="check" id="check"></input>
+			<label>Remember me</label>
+			<br>
+				<button name="Submit" id="loginbtn">Sign in</button>
+			<br><br>
+			<a href="signUp.html">New User! Sign up</a>
+			<br>
+			<br>
+			<a href="#">Forgot Password?</a>
+		</form>
+	</div>
+	<script type="text/javascript" src="login.js"></script>
+	</script>
+</body>
+
+</html>
