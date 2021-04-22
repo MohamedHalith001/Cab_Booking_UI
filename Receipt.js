@@ -1,15 +1,15 @@
 print();
 /**
- * Prints the receipt with all saved details
+ * Prints all the saved details
  */
 function print() {
     let data = localStorage.getItem("data");
     data = JSON.parse(data);
     document.getElementById("pickup").innerHTML = data.pickup;
     document.getElementById("destination").innerHTML = data.destination;
-    document.getElementById("journeyDate").innerHTML = data.journeyDate;
-    document.getElementById("journeyTime").innerHTML = data.journeyTime;
-    document.getElementById("senior").innerHTML = data.seniorCitizen;
+    document.getElementById("travelDate").innerHTML = data.travelDate;
+    document.getElementById("travelTime").innerHTML = data.travelTime;
+    document.getElementById("seniorCitizen").innerHTML = data.seniorCitizen;
     document.getElementById("cost").innerHTML = data.total;
     document.getElementById("type").innerHTML = data.cab;
 }
