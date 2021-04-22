@@ -12,7 +12,6 @@
             padding: 30px;
             width:50%;
             background-color: rgba(255,255,255,0.75);
-
             font-family: 'Times New Roman', Times, serif;
             font-size: 20px;
         }
@@ -30,28 +29,12 @@
             <p>Cab Type: <b><span id="type"></span></b></p>
             <p>Cab Number: <b>TN09BF2234</b></p>
             <p>Ride Cost: <b>Rs.<span id="cost"></span></b></p>
-            <p>Have a Safe Journey :)</p>
+            <p style="text-align:center">Wear a Mask and Be Safe :)</p>
         </div>
     </body>
 
-    <script type="text/javascript">
-        blink();
-        function blink() {
-            let pick = localStorage.getItem("pickup");
-            let dest = localStorage.getItem("destination");
-            let date = localStorage.getItem("date");
-            let time = localStorage.getItem("time");
-            let senior = localStorage.getItem("senior");
-            let cost = localStorage.getItem("total");
-            let type = localStorage.getItem("type");
-            document.getElementById("pickup").innerHTML = pick;
-            document.getElementById("destination").innerHTML = dest;
-            document.getElementById("date").innerHTML = date;
-            document.getElementById("time").innerHTML = time;
-            document.getElementById("senior").innerHTML = senior;
-            document.getElementById("cost").innerHTML = cost;
-            document.getElementById("type").innerHTML = type;
-        }
+    <script type="text/javascript" src="Receipt.js">
+        
     </script>
 
     </html>

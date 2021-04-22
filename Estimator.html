@@ -21,7 +21,9 @@
                 background-color: rgba(255, 255, 255, 0.5);
                 border-radius: 5px;
             }
-
+            p{
+                visibility: hidden;
+            }
             #continuebtn {
                 visibility: hidden;
             }
@@ -75,11 +77,12 @@
                 <br>
                 <br>
                 <label>Are you a senior citizen?</label>
-                <select id="srcitizen">
+                <input type="checkbox" id="srcitizen">
+                <!-- <select id="srcitizen">
                     <option disabled>Choose an option</option>
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
-                </select>
+                </select> -->
                 <br>
                 <u>
                     <h5>Instructions:</h5>
@@ -92,92 +95,27 @@
                     <li>No refund shall be entertained after booking of ticket</li>
                 </ul>
                 <br>
-                <p style="text-align:center">Price:
-                    <span id="price"></span>
-                </p>
-                <p style="text-align:center">Tax:
-                    <span id="gst"></span>
-                </p>
-                <p style="text-align:center">Total:
-                    <span id="total"></span>
-                </p>
+                <b>
+                    <p style="text-align:center">PeakHour:
+                        <span id="peakHour"></span>
+                    </p>
+                    <p style="text-align:center">Price:
+                        <span id="price"></span>
+                    </p>
+                    <p style="text-align:center">Tax:
+                        <span id="gst"></span>
+                    </p>
+                    <p style="text-align:center">Total:
+                        <span id="total"></span>
+                    </p>
+                </b>
                 <br>
                 <button id="calculatebtn" class="btn btn-danger">Calculate</button>
                 <button id="continuebtn" class="btn btn-danger">Continue</button>
         </div>
         </form>
-        <script type="text/javascript">
-            let pickup, destination, km, cab, senior, tax, cost, contbtn;
-            let today, price, gst, total, date, time, datestamp, now;
-            setminDate();
-            function setminDate() {
-                datestamp = new Date();
-                console.log(datestamp);
-                let yy = datestamp.getFullYear();
-                let mm = datestamp.getMonth();
-                mm++;
-                let dd = datestamp.getDate();
-                if (mm < 10) {
-                    mm = '0' + mm;
-                }
-                if (dd < 10) {
-                    dd = '0' + dd;
-                }
-                today = yy + '-' + mm + '-' + dd;
-                document.getElementById("date").setAttribute("min", today);
-            }
-            function journeyDetails() {
-                event.preventDefault();
-                km = document.querySelector("#km").value;
-                cab = document.querySelector("#services").value;
-                senior = document.querySelector("#srcitizen").value;
-                span = document.getElementById("price");
-                tax = document.getElementById("gst");
-                cost = document.getElementById("total");
-                contbtn = document.getElementById("continuebtn");
-                date = document.getElementById("date").value;
-                time = document.getElementById("time").value;
-                pickup = document.getElementById("startLocation").value;
-                destination = document.getElementById("destination").value;
-                calculate();
-                contbtn.addEventListener('click', function () {
-                    window.location.replace('Receipt.html');
-                });
-            };
-            function calculate() {
-                switch (cab) {
-                    case "Micro":
-                        price = km * 10;
-                        break;
-                    case "Mini":
-                        price = km * 15;
-                        break;
-                    case "Prime":
-                        price = km * 20;
-                        break;
-                }
-                if (senior == "Yes") {
-                    price /= 2;
-                }
-                contbtn.style.visibility = "visible";
-                span.innerHTML = price;
-                gst = (7 * price) / 100;
-                tax.innerHTML = (gst);
-                gst = Math.ceil(gst);
-                total = price + gst;
-                cost.innerHTML = (total);
-                saveDetails();
-            }
-            function saveDetails() {
-                localStorage.setItem("km", km);
-                localStorage.setItem("type", cab);
-                localStorage.setItem("senior", senior);
-                localStorage.setItem("total", total);
-                localStorage.setItem("date", date);
-                localStorage.setItem("time", time);
-                localStorage.setItem("pickup", pickup);
-                localStorage.setItem("destination", destination);
-            }
+        <script type="text/javascript" src="Estimator.js">
+
         </script>
     </body>
 

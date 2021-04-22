@@ -15,76 +15,47 @@
 			background: url(01.jpg);
 			background-size: cover;
 		}
-
-		#password {
-			padding: 10px;
-		}
-
 		#division {
 			color: white;
-			bottom: 15%;
-			left: 37%;
-			position: absolute;
 			background-color: rgba(10, 10, 10, 0.85);
 			border-radius: 10%;
 			padding: 0;
 		}
-
-		.container {
-			width: 320px;
-			height: 480px;
-		}
-
-		#login {
-			margin-bottom: 25 auto;
+		.container{
+			width:300px;
+			height:500px;;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="container text-center" id="division" width="100px" height="700px">
+	<div class="container text-center" id="division" >
 		<form method="POST" class="form-group" onsubmit="login()">
 			<h2>Login</h2>
-			<div>
+			<div class="form-outline mb-4">
 				<label for="mobile no" id="mobileno">Mobile No.</label>
 				<br>
-				<input type="number" class="text-center" name="mobile no." id="mobile" placeholder="Enter mobile number" required>
+				<input autofocus type="number" class="text-center" name="mobile no." id="mobile" placeholder="Enter mobile number" required>
 				</input>
 			</div>
-			<div>
+			 <div class="form-outline mb-4">
 				<label for="password" id="password">Password</label>
 				<br>
 				<input type="password" class="text-center" name="password" id="pass" placeholder="Enter password" required>
 				</input>
 			</div>
-			<br>
 			<input type="checkbox" name="check" id="check"></input>
 			<label>Remember me</label>
-			<div>
-				<button name="Submit" id="loginbtn">Sign in</button>
-			</div>
 			<br>
+				<button name="Submit" id="loginbtn">Sign in</button>
+			<br><br>
 			<a href="signUp.html">New User! Sign up</a>
 			<br>
 			<br>
 			<a href="#">Forgot Password?</a>
 		</form>
 	</div>
-	<script type="text/javascript">
-		function login() {
-			event.preventDefault();
-			alert("Login button clicked");
-			let username = document.querySelector("#mobile").value;
-			let password = document.querySelector("#pass").value;
-			if (username = "9524896959" && username.length == 10) {
-				if (password == "pass1234" && password.length >= 8) {
-					alert("Login Successful");
-					window.location.replace('CabDetails.html');
-				}
-			} else {
-				alert("Invalid Credentials");
-			}
-		}
+	<script type="text/javascript" src="login.js"></script>
 	</script>
 </body>
 
