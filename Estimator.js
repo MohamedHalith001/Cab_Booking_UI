@@ -6,6 +6,7 @@ setminDate();
 function setminDate() {
     let today = new Date().toJSON().substr(0,10);
     document.getElementById("travelDate").setAttribute("min", today);
+    document.getElementById("travelDate").setAttribute("value",today);
 }
 
 /**
