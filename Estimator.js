@@ -16,11 +16,10 @@ function journeyDetails() {
     let km = document.querySelector("#km").value;
     let cab = document.querySelector("#services").value;
     let seniorCitizen = document.getElementById("seniorCitizen").checked;
-    console.log(seniorCitizen);
     let span = document.getElementById("price");
     let tax = document.getElementById("gst");
     let cost = document.getElementById("total");
-    let contbtn = document.getElementById("continuebtn");
+    let continuebtn = document.getElementById("continuebtn");
     let travelDate = document.getElementById("travelDate").value;
     let travelTime = document.getElementById("travelTime").value;
     let pickup = document.getElementById("startLocation").value;
@@ -40,7 +39,7 @@ function journeyDetails() {
     for(let i=0;i<tags.length;i++){
         tags[i].style.visibility="VISIBLE";
     }
-    contbtn.style.visibility = "visible";
+    continuebtn.style.visibility = "visible";
 
     span.innerHTML = price;
     let gst = (7 * price) / 100;
@@ -93,7 +92,7 @@ function calculate(cab,km,seniorCitizen,peakHour) {
     } else {
         document.getElementById("peakHour").innerHTML = "No";
     }
-    //if senior citizen price is 50% discount applied
+    //if senior citizen 50% discount is applied
     if (seniorCitizen) {
         price /= 2;
     }
@@ -122,6 +121,5 @@ function saveDetails(total,km,cab,seniorCitizen,pickup,destination,travelDate,tr
         "travelDate":travelDate,
         "travelTime":travelTime
     };
-    console.log(travelDate);
     localStorage.setItem("data", JSON.stringify(obj));
 }
