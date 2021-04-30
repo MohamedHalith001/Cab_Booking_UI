@@ -38,7 +38,7 @@ function journeyDetails() {
     
     var tags = document.querySelectorAll("p");
     for(let i=0;i<tags.length;i++){
-        tags[i].style.visibility="VISIBLE";
+        tags[i].style.display="block";
     }
     continuebtn.style.visibility = "visible";
 
@@ -51,7 +51,7 @@ function journeyDetails() {
     //Calling saveDetails function 
     saveDetails(total,km,cab,seniorCitizen,pickup,destination,travelDate,travelTime);
     //Function for redirecting to next page
-    contbtn.addEventListener('click', function () {
+    continuebtn.addEventListener('click', function () {
         window.location.replace('Receipt.html');
     });
 };

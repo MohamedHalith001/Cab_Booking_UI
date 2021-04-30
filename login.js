@@ -1,7 +1,7 @@
 function login() {
     event.preventDefault();
     let mobileNumber = document.getElementById("mobileNumber").value;
-    let password = document.getElementById("pass").value;
+    let password = document.getElementById("password").value;
     //Calling checkMobile and checkPass and executing commands based on result
     if (checkMobile(mobileNumber) && checkPass(password)) {
         alert("Login Successful");

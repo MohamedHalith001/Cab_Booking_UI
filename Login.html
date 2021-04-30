@@ -19,11 +19,10 @@
 			color: white;
 			background-color: rgba(10, 10, 10, 0.85);
 			border-radius: 10%;
-			padding: 0;
 		}
 		.container{
 			width:300px;
-			height:500px;;
+			height:500px;
 		}
 	</style>
 </head>
@@ -32,18 +31,15 @@
 	<div class="container text-center" id="division" >
 		<form method="POST" class="form-group" onsubmit="login()">
 			<h2>Login</h2>
-			<div class="form-outline mb-4">
-				<label for="mobile no" id="mobileno">Mobile No.</label>
+				<label for="mobile no">Mobile No.</label>
 				<br>
-				<input autofocus type="number" class="text-center" name="mobile no." id="mobileNumber" placeholder="Enter mobile number" required>
-				</input>
-			</div>
-			 <div class="form-outline mb-4">
-				<label for="password" id="password">Password</label>
+				<input autofocus type="number" class="text-center" name="mobileNumber" id="mobileNumber" placeholder="Enter mobile number" required>
+				</input><br><br>
+				<label for="password">Password</label>
 				<br>
-				<input type="password" class="text-center" name="password" id="pass" placeholder="Enter password" required>
+				<input type="password" class="text-center" name="password" id="password" placeholder="Enter password" required>
 				</input>
-			</div>
+				<br><br>
 			<input type="checkbox" name="check" id="check"></input>
 			<label>Remember me</label>
 			<br>
